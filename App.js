@@ -1,11 +1,12 @@
 
 
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image,  } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, ScrollView } from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
 
 
 export default function App() {
   return (
+    <ScrollView>
     <View style={styles.container}>
     
       
@@ -45,12 +46,13 @@ export default function App() {
       <Text style ={styles.textBanner}> Em cartaz </Text>
 
   <Image style = {styles.imageBanner}
-  source = {require("./assets/smallbanner.avif")}
+  source = {require("./assets/joker banner.jpg")}
  
   />
       
       
     </View>
+    </ScrollView>
   );
 }
 
@@ -95,7 +97,7 @@ containerSearch:{
 
 imageBanner:{
   width: '100%',
-  height: 500,
+  height: 450,
   marginTop: 15,
   borderRadius: 10
 },
