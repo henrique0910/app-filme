@@ -2,31 +2,16 @@
 
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, ScrollView } from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
-
-
+import Header from './src/components/Header';
+import Banner from './src/components/Banner';
 export default function App() {
   return (
     <ScrollView>
     <View style={styles.container}>
     
-      
-      {/* INICIO DA HEADER */}
-      
-      <View style = {styles.viewHeader}>
-      
-      <Feather name="menu" size={24} color="white" />
+ {/* INICIO DA HEADER */}
+      <Header></Header>
 
-      <Text style={styles.textHeader}> TECFILMES </Text>
-
-     <TouchableOpacity>
-
-     </TouchableOpacity>
-      </View>
-      
-      
-      
-      
-      
       {/* INICIO DA BARRA DE PESQUISA */}
 
      <View style = {styles.containerSearch}>
@@ -43,18 +28,16 @@ export default function App() {
 
       {/* INICIO DO BANNER */}
       
-      <Text style ={styles.textBanner}> Em cartaz </Text>
-
-  <Image style = {styles.imageBanner}
-  source = {require("./assets/joker banner.jpg")}
+   
  
-  />
+    <Banner></Banner>
       
       
     </View>
     </ScrollView>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -64,14 +47,6 @@ const styles = StyleSheet.create({
                           
   },
 
-  viewHeader:{
-  flexDirection: 'row',
-  width: "90%",
-  alignItems: 'center',
-  marginTop: 10,
-  justifyContent: 'space-between'
-},
-
   inputSearch:{
   height: 40,
   padding: 8,
@@ -79,12 +54,6 @@ const styles = StyleSheet.create({
   alignItems: "center"
 },
 
-  textHeader:{
-
-  color:'white',
-  fontSize: 22, 
-  fontWeight: 'bold'
-},
 
 containerSearch:{
   marginTop: 20,
@@ -95,19 +64,8 @@ containerSearch:{
   justifyContent: 'space-between'
 },
 
-imageBanner:{
-  width: '100%',
-  height: 450,
-  marginTop: 15,
-  borderRadius: 10
-},
-textBanner:{
-  color: 'white',
-  width: '90%',
-  fontSize: 30,
-  marginTop: 18,
-fontWeight:'bold'
-}
+
+
 });
 
 // header//
