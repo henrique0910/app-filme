@@ -4,39 +4,43 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, ScrollView 
 import Feather from '@expo/vector-icons/Feather';
 import Header from './src/components/Header';
 import Banner from './src/components/Banner';
+import Search from './src/components/Search';
+import { FlatList } from 'react-native-web';
+import filmes from './movies'
+
 export default function App() {
   return (
     <ScrollView>
     <View style={styles.container}>
     
- {/* INICIO DA HEADER */}
       <Header></Header>
-
-      {/* INICIO DA BARRA DE PESQUISA */}
-
-     <View style = {styles.containerSearch}>
-      <TextInput 
-      placeholder= 'Buscar filme... '
-      style = {styles.inputSearch}
-      ></TextInput>
-
-      <TouchableOpacity>
-      <Feather name="search" size={24} color="black" />
-      </TouchableOpacity>
-     </View>
-
-
-      {/* INICIO DO BANNER */}
-      
-   
- 
+    <Search></Search>
     <Banner></Banner>
       
-      
+
+<View style = {{width:'90%'}}>
+<FlatList
+horizontal = {true}
+data={filmes}
+keyExtractor={(item)=>item.id}
+renderItem ={({item})=>(
+
+  <TouchableOpacity>
+    <Image style = {{width:80, height: 100}} source ={{uri:item.Imagem }}></Image>
+    <Text> {item.nome} </Text>
+  </TouchableOpacity>
+)}
+/>
+
+</View>
+
+
+
+
     </View>
+
     </ScrollView>
-  );
-}
+  )};
 
 
 const styles = StyleSheet.create({
@@ -44,31 +48,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#000b4a',
     alignItems: 'center',
-                          
+                      
   },
 
-  inputSearch:{
-  height: 40,
-  padding: 8,
-  width: '100%',
-  alignItems: "center"
-},
+ 
 
 
-containerSearch:{
-  marginTop: 20,
-  width: "90%",
-  backgroundColor: 'white',
-  borderRadius: 2,
-  flexDirection: 'row',
-  justifyContent: 'space-between'
-},
+})
 
 
-
-});
-
-// header//
-
-// BANNER
 
