@@ -4,8 +4,8 @@ import {StyleSheet} from "react-native";
 const styles = StyleSheet.create({
 
     imageBanner:{
-        width: '1200px',
-        height: 450,
+        width: '1300px',
+        height: 700,
         marginTop: 15,
         borderRadius: 10
       },
