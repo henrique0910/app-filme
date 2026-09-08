@@ -1,53 +1,57 @@
+import React from 'react';
+import { View, ScrollView, FlatList, StyleSheet } from 'react-native';
 
-
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, ScrollView } from 'react-native';
-import Feather from '@expo/vector-icons/Feather';
 import Header from './src/components/Header';
 import Banner from './src/components/Banner';
 import Search from './src/components/Search';
-import CardMovies from './src/components/cardMovies';
-import { FlatList } from 'react-native-web';
-import filmes from './movies'
+import CardMovies from './src/components/CardMovies';
+
+import filmes from './movies';
 
 export default function App() {
   return (
-    <ScrollView>
-    <View style={styles.container}>
-    
-      <Header></Header>
-    <Search></Search>
-    <Banner></Banner>
-      
+    <ScrollView style={styles.background}>
+      <View style={styles.container}>
 
-<View style = {{width:'90%'}}>
-<FlatList
-showsVerticalScrollIndicator= {false}
-horizontal = {true}
-data={filmes}
-keyExtractor={(item)=>item.id}
-renderItem ={({item})=>(
+        <Header />
 
-<cardMovies
-            titulo = {item.nome}
-            imagem = {item.Imagem}
-             nota  = {item.nota}
+        <Search />
 
-            />
-)}
-/>                                 
+        <Banner />
 
-</View>
+        <View style={styles.lista}>
+          <FlatList
+            data={filmes}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => String(item.id)}
+            renderItem={({ item }) => (
+              <CardMovies
+                titulo={item.nome}
+                imagem={item.Imagem}
+                nota={item.nota}
+              />
+            )}
+          />
+        </View>
 
-
-
-
-    </View>
-
+      </View>
     </ScrollView>
-  )};
+  );
+}
 
+const styles = StyleSheet.create({
+  background: {
+    backgroundColor: '#01072c',
+  },
 
+  container: {
+    flex: 1,
+    backgroundColor: '#01072c',
+    alignItems: 'center',
+  },
 
-
-
-
+  lista: {
+    width: '90%',
+  },
+});

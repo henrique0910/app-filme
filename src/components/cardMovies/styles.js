@@ -1,42 +1,31 @@
+import { StyleSheet } from 'react-native';
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#01072c',
-    alignItems: 'center',
-                      
+  containerFilmes: {
+    width: 140,
+    marginRight: 15,
+    paddingTop: 20,
+    paddingBottom: 16,
   },
 
-  containerFilmes:{
-        paddingTop:20,
-        paddingBottom:16,
-        paddingRight:16,
-        width:140,
-        heigh:28
-    },
+  images: {
+    width: 140,
+    height: 180,
+    borderRadius: 8,
+  },
 
-    titulo:{
-        color: '#fff',
-        fontSize:12,
-        paddingTop:8  
-    },
+  titulo: {
+    color: '#fff',
+    fontSize: 13,
+    fontWeight: 'bold',
+    paddingTop: 8,
+  },
 
-    textNota:{
-        fontSize:10,
-        color:'#fff',
-        paddingLeft:4
-    },
-
-    images:{
-        width:'100%',
-        heigh:170,
-        borderRadius: 8,    
-       
-    }
-
-
- 
-
-
+  textNota: {
+    color: '#fff',
+    fontSize: 11,
+    paddingTop: 5,
+  },
 });
 
 export default styles;
