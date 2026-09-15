@@ -4,9 +4,9 @@ import { View, ScrollView, FlatList, StyleSheet } from 'react-native';
 import Header from './src/components/Header';
 import Banner from './src/components/Banner';
 import Search from './src/components/Search';
-import CardMovies from './src/components/CardMovies';
-
+import CardMovies from './src/components/cardMovies';
 import filmes from './movies';
+import Rotas from './src/rotas/index'
 
 export default function App() {
   return (
