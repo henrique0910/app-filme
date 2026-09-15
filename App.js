@@ -6,7 +6,7 @@ import Banner from './src/components/Banner';
 import Search from './src/components/Search';
 import CardMovies from './src/components/cardMovies';
 import filmes from './movies';
-import Rotas from './src/rotas/index'
+import Rotas from './src/rotas'
 
 export default function App() {
   return (
