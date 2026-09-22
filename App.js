@@ -1,42 +1,20 @@
 import React from 'react';
 import { View, ScrollView, FlatList, StyleSheet } from 'react-native';
 
-import Header from './src/components/Header';
-import Banner from './src/components/Banner';
-import Search from './src/components/Search';
-import CardMovies from './src/components/cardMovies';
-import filmes from './movies';
+import Feather from '@expo/vector-icons/Feather'
+import Header from './src/components/Header'        
+import Banner from './src/components/Banner'
+import Search from './src/components/Search'                                  
+import CardMovies from './src/components/cardMovies'
+import filmes from './movies'
 import Rotas from './src/rotas'
+
 
 export default function App() {
   return (
-    <ScrollView style={styles.background}>
-      <View style={styles.container}>
+   <Rotas>  </Rotas>
 
-        <Header />
 
-        <Search />
-
-        <Banner />
-
-        <View style={styles.lista}>
-          <FlatList
-            data={filmes}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(item) => String(item.id)}
-            renderItem={({ item }) => (
-              <CardMovies
-                titulo={item.nome}
-                imagem={item.Imagem}
-                nota={item.nota}
-              />
-            )}
-          />
-        </View>
-
-      </View>
-    </ScrollView>
   );
 }
 
