@@ -8,7 +8,7 @@ export default function Banner () {
         <Text style ={styles.textBanner}> Em cartaz </Text>
 
         <Image style = {styles.imageBanner}
-        source = {require("../../../assets/Os-Incriveis-2.jpg")}     
+        source = {require("../../../assets/bannerNovo.jpg")}     
         />
         </View>
     )

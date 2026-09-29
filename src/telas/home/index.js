@@ -6,8 +6,8 @@ import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import Search from '../../components/Search';
 import CardMovies from '../../components/cardMovies';
-import filmes from '../../movies';
-import Rotas from '../../rotas';
+import filmes from '../../../movies';
+
 
 export default function App() {
   return (
