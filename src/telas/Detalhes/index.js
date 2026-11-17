@@ -1,53 +1,81 @@
-<<<<<<< HEAD
+
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import { useRoute } from '@react-navigation/native';
+import Feather from '@expo/vector-icons/Feather';
 import styles from './styles_details';
 
 export default function Detalhes() {
   const route = useRoute();
-  const titulo = route?.params?.titulo ?? 'Título não encontrado';
-  const imagem = route?.params?.imagem ?? '';
-  const nota = route?.params?.nota ?? 'Sem nota';
+
+  const titulo = route.params?.titulo ?? 'Filme';
+  const imagem = route.params?.imagem ?? '';
+  const nota = Number(route.params?.nota ?? 0);
+
+  const estrelas = Math.max(0, Math.min(5, Math.round(nota / 2)));
 
   return (
-    <View style={styles.container}>
-      <Image
-        style={styles.imagemFundo}
-        source={{ uri: imagem }}
-      />
+    <ScrollView style={styles.container}>
+      
+      <View style={styles.topo}>
+        {imagem ? (
+          <Image
+            source={{ uri: imagem }}
+            style={styles.imagemFundo}
+            blurRadius={3}
+          />
+        ) : null}
+
+        <View style={styles.overlay} />
+
+        {imagem ? (
+          <Image
+            source={{ uri: imagem }}
+            style={styles.capa}
+          />
+        ) : null}
+      </View>
 
       <View style={styles.conteudo}>
-        <Image
-          style={styles.capa}
-          source={{ uri: imagem }}
-        />
 
         <Text style={styles.titulo}>{titulo}</Text>
-        <Text style={styles.categoria}>Nota: {nota}</Text>
-        <Text style={styles.subtitulo}>Sinopse</Text>
+
+        <Text style={styles.categoria}>FILME • TECFILMES</Text>
+
+        <View style={styles.avaliacao}>
+          <View style={styles.estrelas}>
+            {[1, 2, 3, 4, 5].map((estrela) => (
+              <Feather
+                key={estrela}
+                name="star"
+                size={25}
+                color={estrela <= estrelas ? '#FFD700' : '#555555'}
+              />
+            ))}
+          </View>
+
+          <Text style={styles.nota}>
+            {nota.toFixed(1)} / 10
+          </Text>
+        </View>
+
+        <View style={styles.linha} />
+
+        <Text style={styles.subtitulo}>Sobre o filme</Text>
+
         <Text style={styles.descricao}>
-          Essa é a tela de detalhes do filme {titulo}. Aqui você pode exibir mais informações, avaliações e outros dados do título selecionado.
+          Confira todos os detalhes de {titulo}.
+          Descubra a história, conheça os personagens
+          e aproveite sua experiência no TECFILMES.
         </Text>
+
+        <View style={styles.info}>
+          <Feather name="film" size={22} color="#e50914" />
+          <Text style={styles.infoTexto}>Disponível no TECFILMES</Text>
+        </View>
+
       </View>
-    </View>
+    </ScrollView>
   );
 }
-=======
-import {View, Text} from 'react-native'
-import { useRoute } from '@react-navigation/native';
-export default function Detalhes(){
 
-const route = useRoute();
-
-    return(
-        <View>
-        <Text> ESSA É MINHA TELA DE DETALHES </Text>
-        <Text>{route.params.titulo}</Text>
-        
- <Image style={{}} source={{ uri: route.params.imagem }}   />
-
-        </View>
-    )
-};
->>>>>>> 0e4e8b7fa0388e3638121bd291a6aa9a88a2e4dc

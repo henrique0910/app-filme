@@ -1,59 +1,113 @@
+
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#080811',
+    },
+
+    topo: {
+        width: '100%',
+        height: 380,
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
         backgroundColor: '#101014',
     },
 
     imagemFundo: {
-        width: '100%',
-        height: 280,
-        resizeMode: 'cover',
-        opacity: 0.65,
+        display: 'none',
     },
 
-    conteudo: {
-        padding: 20,
-        marginTop: -50,
+    overlay: {
+        display: 'none',
     },
 
     capa: {
-        width: 150,
-        height: 210,
-        borderRadius: 12,
-        marginBottom: 20,
+        width: 210,
+        height: 300,
+        borderRadius: 15,
+        marginBottom: 0,
         borderWidth: 2,
-        borderColor: '#292929',
+        borderColor: '#e50914',
         resizeMode: 'cover',
+        elevation: 12,
+    },
+
+    conteudo: {
+        padding: 22,
+        marginTop: 0,
+        alignItems: 'center',
     },
 
     titulo: {
-        fontSize: 30,
+        fontSize: 29,
         fontWeight: 'bold',
         color: '#ffffff',
-        marginBottom: 10,
+        textAlign: 'center',
+        marginBottom: 12,
     },
 
     categoria: {
-        fontSize: 14,
+        fontSize: 13,
         color: '#e50914',
+        letterSpacing: 3,
+        marginBottom: 20,
+    },
+
+    avaliacao: {
+        alignItems: 'center',
+        marginBottom: 25,
+    },
+
+    estrelas: {
+        flexDirection: 'row',
+        gap: 7,
+        marginBottom: 10,
+    },
+
+    nota: {
+        fontSize: 19,
+        fontWeight: 'bold',
+        color: '#FFD700',
+    },
+
+    linha: {
+        width: '100%',
+        height: 1,
+        backgroundColor: '#292929',
         marginBottom: 25,
     },
 
     subtitulo: {
-        fontSize: 22,
+        fontSize: 23,
         fontWeight: 'bold',
         color: '#ffffff',
-        marginBottom: 12,
+        marginBottom: 15,
+        alignSelf: 'flex-start',
     },
 
     descricao: {
         fontSize: 16,
         color: '#c4c4c4',
-        lineHeight: 25,
+        lineHeight: 26,
+        textAlign: 'justify',
         marginBottom: 30,
-    }
+    },
+
+    info: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        alignSelf: 'flex-start',
+        gap: 12,
+        marginBottom: 30,
+    },
+
+    infoTexto: {
+        color: '#ffffff',
+        fontSize: 14,
+    },
 });
 
 export default styles;
